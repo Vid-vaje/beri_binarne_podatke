@@ -30,13 +30,14 @@ int main(int argc, char *argv[]) {
 }
 
     unsigned short v;
+    printf("%s:\n", argv[1]);
     while ((n = read(fd, &v, sizeof v)) == sizeof v) {
 <<<<<<< HEAD
         printf("%hu;\n", v);
 =======
         printf("%hu, ", v)
 >>>>>>> locila
-    }
+        }
     if (n == -1) {
         perror("read");
         close(fd);

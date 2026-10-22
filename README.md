@@ -1,0 +1,1 @@
+# Bralnik ushort datotek

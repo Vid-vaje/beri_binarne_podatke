@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prenesi kodo
+        uses: actions/checkout@v4
+
+      - name: Prevedi program
+        run: gcc -Wall -Wextra -o beri beri_binarne_podatke.c
+
+      - name: Preizkusi program
+        run: |
+          printf 'ushort\0\x01\x00\x02\x00' > test.bin
+          ./beri test.bin

@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 
     unsigned short v;
     while ((n = read(fd, &v, sizeof v)) == sizeof v) {
-        printf("%hx\n", v);
+        printf("%hu, ", v)
     }
     if (n == -1) {
         perror("read");
